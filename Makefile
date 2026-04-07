@@ -1,4 +1,11 @@
-all: da65-info/half-pipe.info
+all: disassembly/half-pipe.s
+
+temp_info_path := $(shell mktemp)
+disassembly/%.s: Makefile unpacked-prgs/%.prg da65-info/%.info
+	cat $(word 3, $^) da65-info/c64-hardware.info > $(temp_info_path)
+	mkdir -p $(dir $@)
+	da65 --hexoffs --comments 2 --info $(temp_info_path) -o $@ $(word 2, $^)
+	rm $(temp_info_path)
 
 .PRECIOUS: da65-info/%.info
 da65-info/%.info: Makefile tools/prg-load-address unpacked-prgs/%.prg
@@ -23,6 +30,7 @@ tools/prg-load-address:
 
 .PHONY: clean
 clean:
+	rm -r disassembly
 	rm -r unpacked-prgs
 	rm tools/unpack-prg
 	rm tools/prg-load-address
