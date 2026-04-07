@@ -11,3 +11,5 @@ RANGE { START $b1f6; NAME "sprites_bonus_spikey"; TYPE BYTETABLE; UNIT 64; END +
 RANGE { START $b3f6; NAME "sprites_bonus_something"; TYPE BYTETABLE; UNIT 64; END +512; };
 RANGE { START $b5f6; NAME "sprites_bonus_worms"; TYPE BYTETABLE; UNIT 64; END +512; };
 RANGE { START $b7f6; NAME "sprites_bonus_banded"; TYPE BYTETABLE; UNIT 64; END +512; };
+
+RANGE { START $c000; NAME "background_bitmap"; TYPE BYTETABLE; END +8000; UNIT 8000; };
