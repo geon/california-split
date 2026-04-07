@@ -1,0 +1,272 @@
+
+FINAL TAP Test Report
+
+Path= ../California Games (1987)(Epyx)(Side A).tap
+Read Tolerance= 10
+
+
+GENERAL INFO AND TEST RESULTS
+
+TAP Name    : ../California Games (1987)(Epyx)(Side A).tap
+TAP Size    : 2136912 bytes (2086 kB)
+TAP Version : 1
+Recognized  : 100%
+Data Files  : 13
+Pauses      : 11
+Gaps        : 0
+Magic CRC32 : 738D36E2
+Bootable    : YES (1 part, name: CAL GAMES)
+Loader ID   : US Gold loader
+
+Overall Result    : PASS
+
+Header test       : PASS [Sig: OK] [Ver: OK] [Siz: OK]
+Recognition test  : PASS [2136892 of 2136892 bytes accounted for] [100%]
+Checksum test     : PASS [13 of 13 checksummed files OK]
+Read test         : PASS [0 Errors]
+Optimization test : PASS [13 of 13 files OK]
+
+
+
+
+
+
+FILE FREQUENCY TABLE
+
+PAUSE (11)
+C64 ROM-TAPE HEADER (2)
+C64 ROM-TAPE DATA (2)
+US-GOLD TAPE (9)
+
+
+
+
+
+FILE DATABASE
+
+---------------------------------
+File Type: C64 ROM-TAPE HEADER
+Location: $0014 -> $6AC8 -> $79C8 -> $79DD
+LA: $033C  EA: $03FB  SZ: 192
+File Name: CAL GAMES
+Pilot/Trailer Size: 27136/0
+Checkbyte Actual/Expected: $C6/$C6
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 8CB7FAB9
+ - File ID : FIRST
+ - DATA FILE type : PRG
+ - DATA FILE Load address : $0801
+ - DATA FILE End address : $09F6
+ - DATA FILE Size (calculated) : 501 bytes
+
+---------------------------------
+File Type: C64 ROM-TAPE HEADER
+Location: $79DE -> $7AE1 -> $89E1 -> $8A44
+LA: $033C  EA: $03FB  SZ: 192
+File Name: CAL GAMES
+Pilot/Trailer Size: 79/78
+Checkbyte Actual/Expected: $C6/$C6
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 8CB7FAB9
+ - File ID : REPEAT
+ - DATA FILE type : PRG
+ - DATA FILE Load address : $0801
+ - DATA FILE End address : $09F6
+ - DATA FILE Size (calculated) : 501 bytes
+
+---------------------------------
+File Type: PAUSE
+Location: $8A45 -> $0000 -> $0000 -> $8A48
+ - Length: 320000 cycles (0.3248 secs)
+
+---------------------------------
+File Type: C64 ROM-TAPE DATA
+Location: $8A49 -> $9FFB -> $C71F -> $C734
+LA: $0801  EA: $09F5  SZ: 501
+Pilot/Trailer Size: 5374/0
+Checkbyte Actual/Expected: $FD/$FD
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 548CC3DA
+ - File ID : FIRST
+
+---------------------------------
+File Type: C64 ROM-TAPE DATA
+Location: $C735 -> $C838 -> $EF5C -> $EFBF
+LA: $0801  EA: $09F5  SZ: 501
+Pilot/Trailer Size: 79/78
+Checkbyte Actual/Expected: $FD/$FD
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 548CC3DA
+ - File ID : REPEAT
+
+---------------------------------
+File Type: PAUSE
+Location: $EFC0 -> $0000 -> $0000 -> $EFC3
+ - Length: 300000 cycles (0.3045 secs)
+
+---------------------------------
+File Type: US-GOLD TAPE
+Location: $EFC4 -> $F1CC -> $1426C -> $14273
+LA: $1000  EA: $19FF  SZ: 2560
+File Name: CAL
+Pilot/Trailer Size: 64/0
+Checkbyte Actual/Expected: $DA/$DA
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 9200909C
+
+---------------------------------
+File Type: PAUSE
+Location: $14274 -> $0000 -> $0000 -> $14277
+ - Length: 5420000 cycles (5.5012 secs)
+
+---------------------------------
+File Type: US-GOLD TAPE
+Location: $14278 -> $14480 -> $2E900 -> $2E907
+LA: $CB80  EA: $FFFB  SZ: 13436
+File Name: 7
+Pilot/Trailer Size: 64/0
+Checkbyte Actual/Expected: $F9/$F9
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: FD0864CB
+
+---------------------------------
+File Type: PAUSE
+Location: $2E908 -> $0000 -> $0000 -> $2E90B
+ - Length: 6440000 cycles (6.5364 secs)
+
+---------------------------------
+File Type: US-GOLD TAPE
+Location: $2E90C -> $2EB14 -> $5DF9C -> $5DFA3
+LA: $A180  EA: $FFFC  SZ: 24189
+File Name: 0
+Pilot/Trailer Size: 64/0
+Checkbyte Actual/Expected: $D2/$D2
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 41D4F30E
+
+---------------------------------
+File Type: PAUSE
+Location: $5DFA4 -> $0000 -> $0000 -> $5DFA7
+ - Length: 7860000 cycles (7.9777 secs)
+
+---------------------------------
+File Type: US-GOLD TAPE
+Location: $5DFA8 -> $5E1B0 -> $C1238 -> $C123F
+LA: $3A00  EA: $FFFC  SZ: 50685
+File Name: 1
+Pilot/Trailer Size: 64/0
+Checkbyte Actual/Expected: $C7/$C7
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 47907C2E
+
+---------------------------------
+File Type: PAUSE
+Location: $C1240 -> $0000 -> $0000 -> $C1243
+ - Length: 7120000 cycles (7.2266 secs)
+
+---------------------------------
+File Type: US-GOLD TAPE
+Location: $C1244 -> $C144C -> $F08D4 -> $F08DB
+LA: $A180  EA: $FFFC  SZ: 24189
+File Name: 0
+Pilot/Trailer Size: 64/0
+Checkbyte Actual/Expected: $D2/$D2
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 41D4F30E
+
+---------------------------------
+File Type: PAUSE
+Location: $F08DC -> $0000 -> $0000 -> $F08DF
+ - Length: 6340000 cycles (6.4349 secs)
+
+---------------------------------
+File Type: US-GOLD TAPE
+Location: $F08E0 -> $F0AE8 -> $150B70 -> $150B77
+LA: $4000  EA: $FFFC  SZ: 49149
+File Name: 2
+Pilot/Trailer Size: 64/0
+Checkbyte Actual/Expected: $A9/$A9
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 80913C94
+
+---------------------------------
+File Type: PAUSE
+Location: $150B78 -> $0000 -> $0000 -> $150B7B
+ - Length: 6840000 cycles (6.9424 secs)
+
+---------------------------------
+File Type: US-GOLD TAPE
+Location: $150B7C -> $150D84 -> $18020C -> $180213
+LA: $A180  EA: $FFFC  SZ: 24189
+File Name: 0
+Pilot/Trailer Size: 64/0
+Checkbyte Actual/Expected: $D2/$D2
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 41D4F30E
+
+---------------------------------
+File Type: PAUSE
+Location: $180214 -> $0000 -> $0000 -> $180217
+ - Length: 6200000 cycles (6.2928 secs)
+
+---------------------------------
+File Type: US-GOLD TAPE
+Location: $180218 -> $180420 -> $1DA4A8 -> $1DA4AF
+LA: $4C00  EA: $FFFC  SZ: 46077
+File Name: 3
+Pilot/Trailer Size: 64/0
+Checkbyte Actual/Expected: $B8/$B8
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 52853F5B
+
+---------------------------------
+File Type: PAUSE
+Location: $1DA4B0 -> $0000 -> $0000 -> $1DA4B3
+ - Length: 7740000 cycles (7.8559 secs)
+
+---------------------------------
+File Type: US-GOLD TAPE
+Location: $1DA4B4 -> $1DA6BC -> $209B44 -> $209B4B
+LA: $A180  EA: $FFFC  SZ: 24189
+File Name: 0
+Pilot/Trailer Size: 64/0
+Checkbyte Actual/Expected: $D2/$D2
+Read Errors: 0
+Unoptimized Pulses: 0
+CRC32: 41D4F30E
+
+---------------------------------
+File Type: PAUSE
+Location: $209B4C -> $0000 -> $0000 -> $209B4F
+ - Length: 4926240 cycles (5.0000 secs)
+
+
+
+
+
+
+PULSE FREQUENCY TABLE
+
+0x24 (1240003)
+0x30 (45662)
+0x42 (849753)
+0x56 (1430)
+
+
+
+
+
+Generated by Final TAP 2.77 console - (c) Subchrist Software. 2001-2006
+
