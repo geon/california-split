@@ -1,5 +1,9 @@
 GLOBAL { INPUTOFFS 2; STARTADDR $0a00; };
 
+RANGE { START $2a00; NAME "blank_0"; TYPE BYTETABLE; END $2fff; };
+RANGE { START $96c0; NAME "blank_1"; TYPE BYTETABLE; END $97ff; };
+RANGE { START $9d00; NAME "blank_2"; TYPE BYTETABLE; END $a07f; };
+
 RANGE { START $a3f6; NAME "sprites_bonus_jagged"; TYPE BYTETABLE; UNIT 64; END +512; };
 RANGE { START $a5f6; NAME "sprites_bonus_splash"; TYPE BYTETABLE; UNIT 64; END +512; };
 RANGE { START $a7f6; NAME "sprites_bonus_atom"; TYPE BYTETABLE; UNIT 64; END +512; };
@@ -12,4 +16,35 @@ RANGE { START $b3f6; NAME "sprites_bonus_something"; TYPE BYTETABLE; UNIT 64; EN
 RANGE { START $b5f6; NAME "sprites_bonus_worms"; TYPE BYTETABLE; UNIT 64; END +512; };
 RANGE { START $b7f6; NAME "sprites_bonus_banded"; TYPE BYTETABLE; UNIT 64; END +512; };
 
+RANGE { START $b9f6; NAME "blank_3"; TYPE BYTETABLE; END $bfff; };
+
+RANGE { START $e800; NAME "runtime_sprites"; TYPE BYTETABLE; UNIT 64; END +512; };
+LABEL { ADDR $e840; NAME "runtime_sprites_1"; };
+
 RANGE { START $c000; NAME "background_bitmap"; TYPE BYTETABLE; END +8000; UNIT 8000; };
+# Not sure.
+RANGE { START $e000; NAME "background_color"; TYPE BYTETABLE; END +1000; UNIT 1000; };
+
+RANGE { START $0e2c; NAME "play_again"; TYPE TEXTTABLE; END +11; };
+RANGE { START $0e39; NAME "play_again_yes"; TYPE TEXTTABLE; END +3; };
+RANGE { START $0e3c; NAME "play_again_no"; TYPE TEXTTABLE; END +2; };
+RANGE { START $27bd; NAME "error_messages"; TYPE TEXTTABLE; END $2864; };
+RANGE { START $2907; NAME "error_messages_2"; TYPE TEXTTABLE; END $2951; };
+
+LABEL { ADDR $c398; NAME "player_name_bitmap"; SIZE 136; };
+
+RANGE { START $ea00; NAME "font"; TYPE BYTETABLE; END $ebff; UNIT 8; };
+
+# Unknown format. Not the exact range, but I can see the graphics.
+RANGE { START $32d0; NAME "packed_player_sprites"; TYPE BYTETABLE; END $8abf; };
+RANGE { START $8dd2; NAME "packed_player_sprites"; TYPE BYTETABLE; END $96b6; };
+
+RANGE { START $f7c3; NAME "doesnt_look_like_code_1"; TYPE BYTETABLE; END $f905; };
+RANGE { START $f946; NAME "doesnt_look_like_code_2"; TYPE BYTETABLE; END $ffff; };
+RANGE { START $ef42; NAME "doesnt_look_like_code_3"; TYPE BYTETABLE; END $f12e; };
+RANGE { START $e3e8; NAME "doesnt_look_like_code_4"; TYPE BYTETABLE; END $e7ff; };
+#RANGE { START $2865; NAME "doesnt_look_like_code_5"; TYPE BYTETABLE; END $29ff; };
+#RANGE { START $3000; NAME "doesnt_look_like_code_9"; TYPE BYTETABLE; END $32cf; };
+RANGE { START $9800; NAME "doesnt_look_like_code_6"; TYPE BYTETABLE; END $9cff; };
+RANGE { START $a080; NAME "doesnt_look_like_code_8"; TYPE BYTETABLE; END $a3f4; };
+RANGE { START $11f0; NAME "doesnt_look_like_code_7"; TYPE BYTETABLE; END $1324; };
