@@ -3,3 +3,4 @@ notes.md
 disassembly
 tools/*
 !tools/*.c
+unpacked-prgs
