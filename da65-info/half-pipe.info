@@ -1,0 +1,13 @@
+GLOBAL { INPUTOFFS 2; STARTADDR $0a00; };
+
+RANGE { START $a3f6; NAME "sprites_bonus_jagged"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $a5f6; NAME "sprites_bonus_splash"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $a7f6; NAME "sprites_bonus_atom"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $a9f6; NAME "sprites_bonus_star"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $abf6; NAME "sprites_bonus_skull"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $adf6; NAME "sprites_bonus_squiggle"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $aff6; NAME "sprites_bonus_sparkle"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $b1f6; NAME "sprites_bonus_spikey"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $b3f6; NAME "sprites_bonus_something"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $b5f6; NAME "sprites_bonus_worms"; TYPE BYTETABLE; UNIT 64; END +512; };
+RANGE { START $b7f6; NAME "sprites_bonus_banded"; TYPE BYTETABLE; UNIT 64; END +512; };
