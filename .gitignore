@@ -1,3 +1,5 @@
 taps
 notes.md
 disassembly
+tools/*
+!tools/*.c
