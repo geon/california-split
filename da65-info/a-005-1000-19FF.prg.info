@@ -1,0 +1,10 @@
+GLOBAL {
+        # The 2 byte prg header.
+        INPUTOFFS 2;
+
+        # The prg is actually loaded at $1000 and starts executing there, but that's just
+        # a minimal bootstrapper that copies the rest of the file to -$1000 lower. So to
+        # emulate that, we can just disassemble it as if it loaded to $0000. Same-same.
+        STARTADDR $0000;
+};
+

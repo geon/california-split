@@ -1,0 +1,47 @@
+# c64 hardware
+LABEL { NAME "io_port_register";   ADDR  $00;   SIZE 2;    };
+LABEL { NAME "stack";   ADDR  $100;  SIZE 255;  };
+LABEL { NAME "keyboard_buffer"; ADDR  $0277; SIZE 10; };
+LABEL { NAME "datasette_buffer"; ADDR  $033C; SIZE 192; };
+LABEL { NAME "hanmi";   ADDR  $FFFA; };
+LABEL { NAME "hares";   ADDR  $FFFC; };
+LABEL { NAME "hairq";   ADDR  $FFFE; };
+
+LABEL { ADDR $D000; NAME "sprite_0_x"; };
+LABEL { ADDR $D001; NAME "sprite_0_y"; };
+LABEL { ADDR $D002; NAME "sprite_1_x"; };
+LABEL { ADDR $D003; NAME "sprite_1_y"; };
+LABEL { ADDR $D004; NAME "sprite_2_x"; };
+LABEL { ADDR $D005; NAME "sprite_2_y"; };
+LABEL { ADDR $D006; NAME "sprite_3_x"; };
+LABEL { ADDR $D007; NAME "sprite_3_y"; };
+LABEL { ADDR $D008; NAME "sprite_4_x"; };
+LABEL { ADDR $D009; NAME "sprite_4_y"; };
+LABEL { ADDR $D00A; NAME "sprite_5_x"; };
+LABEL { ADDR $D00B; NAME "sprite_5_y"; };
+LABEL { ADDR $D00C; NAME "sprite_6_x"; };
+LABEL { ADDR $D00D; NAME "sprite_6_y"; };
+LABEL { ADDR $D00E; NAME "sprite_7_x"; };
+LABEL { ADDR $D00F; NAME "sprite_7_y"; };
+
+LABEL { ADDR $D011; NAME "yscroll"; };
+LABEL { ADDR $D016; NAME "xscroll"; };
+
+LABEL { ADDR $D018; NAME "screen_and_charset"; };
+
+LABEL { ADDR $D020; NAME "border_color"; };
+LABEL { ADDR $D021; NAME "background_color_0"; };
+LABEL { ADDR $D022; NAME "background_color_1"; };
+LABEL { ADDR $D023; NAME "background_color_2"; };
+LABEL { ADDR $D024; NAME "background_color_3"; };
+LABEL { ADDR $D025; NAME "sprite_multicolor_0"; };
+LABEL { ADDR $D026; NAME "sprite_multicolor_1"; };
+LABEL { ADDR $D027; NAME "sprite_0_color"; };
+LABEL { ADDR $D028; NAME "sprite_1_color"; };
+LABEL { ADDR $D029; NAME "sprite_2_color"; };
+LABEL { ADDR $D02A; NAME "sprite_3_color"; };
+LABEL { ADDR $D02B; NAME "sprite_4_color"; };
+LABEL { ADDR $D02C; NAME "sprite_5_color"; };
+LABEL { ADDR $D02D; NAME "sprite_6_color"; };
+LABEL { ADDR $D02E; NAME "sprite_7_color"; };
+LABEL { ADDR $D800; NAME "color_ram"; SIZE 1000; };
