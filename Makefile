@@ -1,4 +1,8 @@
-all: unpacked-prgs/half-pipe.prg
+all: da65-info/half-pipe.info
+
+.PRECIOUS: da65-info/%.info
+da65-info/%.info: Makefile tools/prg-load-address unpacked-prgs/%.prg
+	echo 'GLOBAL { INPUTOFFS 2; STARTADDR $$$(shell tools/prg-load-address $(word 3, $^)); };' > $@
 
 # As per table in 005-1000-19FF.prg at $0705 (Relocated -$1000 at runtime.)
 unpack_from_address_menu := A195
