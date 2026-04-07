@@ -8,3 +8,40 @@ GLOBAL {
         STARTADDR $0000;
 };
 
+RANGE {
+        TYPE SKIP;
+        START $0000;
+        END $01ff;
+};
+
+RANGE {
+        TYPE SKIP;
+        START $0213;
+        END $0401;
+};
+
+RANGE {
+        TYPE SKIP;
+        START $05d5;
+        END $05ff;
+};
+
+RANGE {
+        TYPE SKIP;
+        START $0800;
+        END $ffff;
+};
+
+LABEL { ADDR $0696; NAME "start"; };
+LABEL { ADDR $06c1; NAME "unpack"; };
+
+LABEL { ADDR $0796; NAME "write_next"; SIZE 8; };
+LABEL { ADDR $079f; NAME "read_next"; SIZE 8; };
+
+LABEL { ADDR $00f0; NAME "write_pointer"; SIZE 2; };
+LABEL { ADDR $00f2; NAME "read_pointer"; SIZE 2; };
+
+LABEL { ADDR $00f4; NAME "prg_index"; };
+LABEL { ADDR $0705; NAME "packed_prg_content_addresses_lo"; };
+LABEL { ADDR $070d; NAME "packed_prg_content_addresses_hi"; };
+RANGE { START $0705; END +16; TYPE BYTETABLE; };
