@@ -8,8 +8,8 @@ disassembly/%.s: Makefile unpacked-prgs/%.prg da65-info/%.info
 	rm $(temp_info_path)
 
 .PRECIOUS: da65-info/%.info
-da65-info/%.info: Makefile tools/prg-load-address unpacked-prgs/%.prg
-	echo 'GLOBAL { INPUTOFFS 2; STARTADDR $$$(shell tools/prg-load-address $(word 3, $^)); };' > $@
+da65-info/%.info:
+	echo 'GLOBAL { INPUTOFFS 2; STARTADDR $$$(shell tools/prg-load-address unpacked-prgs/$(basename $(notdir $@)).prg); };' > $@
 
 # As per table in 005-1000-19FF.prg at $0705 (Relocated -$1000 at runtime.)
 unpack_from_address_menu := A195
