@@ -2,7 +2,7 @@ all: disassembly/half-pipe.s
 
 temp_info_path := $(shell mktemp)
 disassembly/%.s: Makefile unpacked-prgs/%.prg da65-info/%.info
-	cat $(word 3, $^) da65-info/c64-hardware.info > $(temp_info_path)
+	cat $(word 3, $^) da65-info/c64-hardware.info da65-info/players.info > $(temp_info_path)
 	mkdir -p $(dir $@)
 	da65 --hexoffs --comments 2 --info $(temp_info_path) -o $@ $(word 2, $^)
 	rm $(temp_info_path)

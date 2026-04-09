@@ -1,0 +1,17 @@
+LABEL { ADDR $0800; NAME "player_1_name"; SIZE 10; };
+LABEL { ADDR $0820; NAME "player_2_name"; SIZE 10; };
+LABEL { ADDR $0840; NAME "player_3_name"; SIZE 10; };
+LABEL { ADDR $0860; NAME "player_4_name"; SIZE 10; };
+LABEL { ADDR $0880; NAME "player_5_name"; SIZE 10; };
+LABEL { ADDR $08a0; NAME "player_6_name"; SIZE 10; };
+LABEL { ADDR $08c0; NAME "player_7_name"; SIZE 10; };
+LABEL { ADDR $08e0; NAME "player_8_name"; SIZE 10; };
+
+LABEL { ADDR $080f; NAME "player_1_sponsor"; SIZE 1; };
+LABEL { ADDR $082f; NAME "player_2_sponsor"; SIZE 1; };
+LABEL { ADDR $084f; NAME "player_3_sponsor"; SIZE 1; };
+LABEL { ADDR $086f; NAME "player_4_sponsor"; SIZE 1; };
+LABEL { ADDR $088f; NAME "player_5_sponsor"; SIZE 1; };
+LABEL { ADDR $08af; NAME "player_6_sponsor"; SIZE 1; };
+LABEL { ADDR $08cf; NAME "player_7_sponsor"; SIZE 1; };
+LABEL { ADDR $08ef; NAME "player_8_sponsor"; SIZE 1; };
