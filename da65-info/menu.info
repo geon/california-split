@@ -1,0 +1,4 @@
+GLOBAL { INPUTOFFS 2; STARTADDR $0a00; };
+
+# Args: Y:index
+LABEL { ADDR $165f; NAME "print_name_char"; };
