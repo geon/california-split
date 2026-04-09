@@ -37,14 +37,18 @@ RANGE { START $ea00; NAME "font"; TYPE BYTETABLE; END $ebff; UNIT 8; };
 
 # Unknown format. Not the exact range, but I can see the graphics.
 RANGE { START $32d0; NAME "packed_player_sprites"; TYPE BYTETABLE; END $8abf; };
-RANGE { START $8dd2; NAME "packed_player_sprites"; TYPE BYTETABLE; END $96b6; };
+RANGE { START $8dd2; NAME "packed_player_sprites_2"; TYPE BYTETABLE; END $96b6; };
 
 RANGE { START $f7c3; NAME "doesnt_look_like_code_1"; TYPE BYTETABLE; END $f905; };
 RANGE { START $f946; NAME "doesnt_look_like_code_2"; TYPE BYTETABLE; END $ffff; };
 RANGE { START $ef42; NAME "doesnt_look_like_code_3"; TYPE BYTETABLE; END $f12e; };
 RANGE { START $e3e8; NAME "doesnt_look_like_code_4"; TYPE BYTETABLE; END $e7ff; };
-#RANGE { START $2865; NAME "doesnt_look_like_code_5"; TYPE BYTETABLE; END $29ff; };
-#RANGE { START $3000; NAME "doesnt_look_like_code_9"; TYPE BYTETABLE; END $32cf; };
+RANGE { START $2952; NAME "doesnt_look_like_code_5"; TYPE BYTETABLE; END $29ff; };
+RANGE { START $3000; NAME "doesnt_look_like_code_9"; TYPE BYTETABLE; END $32cf; };
 RANGE { START $9800; NAME "doesnt_look_like_code_6"; TYPE BYTETABLE; END $9cff; };
 RANGE { START $a080; NAME "doesnt_look_like_code_8"; TYPE BYTETABLE; END $a3f4; };
 RANGE { START $11f0; NAME "doesnt_look_like_code_7"; TYPE BYTETABLE; END $1324; };
+RANGE { START $8AC0; NAME "doesnt_look_like_code_10"; TYPE BYTETABLE; END $8dd0; };
+RANGE { START $df40; NAME "doesnt_look_like_code_11"; TYPE BYTETABLE; END $dfff; };
+RANGE { START $2865; NAME "doesnt_look_like_code_12"; TYPE BYTETABLE; END $2904; };
+RANGE { START $1dcd; NAME "doesnt_look_like_code_13"; TYPE BYTETABLE; END $1e44; };
