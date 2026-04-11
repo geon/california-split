@@ -35,6 +35,8 @@ clean:
 	rm tools/unpack-prg
 	rm tools/prg-load-address
 
-%.prg: unpacked-prgs/%.prg tools/prg-load-address
-	../ByteBoozer2/b2/b2 -c $(shell tools/prg-load-address unpacked-prgs/$@) unpacked-prgs/$@
-	mv unpacked-prgs/$@.b2 $@
+%.prg: src/%.s tools/prg-load-address
+	cl65 -o $@ -C src/c64-gamedev.cfg src/$(basename $@).s
+	cmp -x -n 10 $@ unpacked-prgs/$@
+# 	../ByteBoozer2/b2/b2 -c $(shell tools/prg-load-address unpacked-prgs/$@) unpacked-prgs/$@
+# 	mv unpacked-prgs/$@.b2 $@
