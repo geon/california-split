@@ -52,3 +52,9 @@ RANGE { START $8AC0; NAME "doesnt_look_like_code_10"; TYPE BYTETABLE; END $8dd0;
 RANGE { START $df40; NAME "doesnt_look_like_code_11"; TYPE BYTETABLE; END $dfff; };
 RANGE { START $2865; NAME "doesnt_look_like_code_12"; TYPE BYTETABLE; END $2904; };
 RANGE { START $1dcd; NAME "doesnt_look_like_code_13"; TYPE BYTETABLE; END $1e44; };
+
+LABEL { ADDR $0031; NAME "current_player_index"; };
+LABEL { ADDR $108f; NAME "switch_player"; SIZE 60; };
+# Args: A: char, Y: x-pos
+LABEL { ADDR $1052; NAME "print_char"; };
+LABEL { ADDR $0e15; NAME "prompt_play_again"; };
