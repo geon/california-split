@@ -34,3 +34,7 @@ clean:
 	rm -r unpacked-prgs
 	rm tools/unpack-prg
 	rm tools/prg-load-address
+
+%.prg: unpacked-prgs/%.prg tools/prg-load-address
+	../ByteBoozer2/b2/b2 -c $(shell tools/prg-load-address unpacked-prgs/$@) unpacked-prgs/$@
+	mv unpacked-prgs/$@.b2 $@
