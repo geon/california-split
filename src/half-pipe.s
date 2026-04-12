@@ -1,5 +1,5 @@
 ; da65 V2.19 - Git c720c3c48
-; Created:    2026-04-12 15:52:50
+; Created:    2026-04-12 15:57:00
 ; Input file: unpacked-prgs/half-pipe.prg
 ; Page:       1
 
@@ -14,6 +14,7 @@ current_player_index:= $0031
 cursor_color_maybe:= $003D
 buffer_zp40     := $0040
 buffer_zp56     := $0056
+last_joystick_1_value:= $0079
 stack           := $0100
 L0200           := $0200
 keyboard_buffer := $0277
@@ -50,7 +51,7 @@ L0A0F:  sta     io_port_register,y              ; 0A0F
         iny                                     ; 0A12
         bne     L0A0F                           ; 0A13
         lda     #$FF                            ; 0A15
-        sta     $79                             ; 0A17
+        sta     last_joystick_1_value           ; 0A17
         lda     #$18                            ; 0A19
         sta     $19                             ; 0A1B
         jsr     LEC00                           ; 0A1D
@@ -684,7 +685,7 @@ L0E46:  lda     play_again_yes,y                ; 0E46
         iny                                     ; 0E4C
         dex                                     ; 0E4D
         bne     L0E46                           ; 0E4E
-        lda     $79                             ; 0E50
+        lda     last_joystick_1_value           ; 0E50
         jsr     read_joysick                    ; 0E52
         tay                                     ; 0E55
         and     #$10                            ; 0E56
@@ -1123,7 +1124,7 @@ L10D8:  lda     $08FE                           ; 10D8
         rts                                     ; 10E9
 
 ; ----------------------------------------------------------------------------
-L10EA:  lda     $79                             ; 10EA
+L10EA:  lda     last_joystick_1_value           ; 10EA
         and     #$1F                            ; 10EC
         cmp     #$1F                            ; 10EE
         beq     L10F9                           ; 10F0
@@ -1142,7 +1143,7 @@ L10F9:  dec     L1105                           ; 10F9
 
 ; ----------------------------------------------------------------------------
 L1105:  .byte   $04                             ; 1105
-L1106:  lda     $79                             ; 1106
+L1106:  lda     last_joystick_1_value           ; 1106
         and     #$10                            ; 1108
         beq     L1113                           ; 110A
         lda     #$04                            ; 110C
@@ -2235,7 +2236,7 @@ L1A1A:  sta     $42                             ; 1A1A
         ldx     $52                             ; 1A2B
         bmi     L1A45                           ; 1A2D
         bpl     L1A4B                           ; 1A2F
-L1A31:  lda     $79                             ; 1A31
+L1A31:  lda     last_joystick_1_value           ; 1A31
         and     #$04                            ; 1A33
         bne     L1A48                           ; 1A35
         lda     #$0C                            ; 1A37
@@ -2578,7 +2579,7 @@ L1CA9:  jmp     L2705                           ; 1CA9
         ldx     $52                             ; 1CB0
         bpl     L1CCA                           ; 1CB2
         bmi     L1CD0                           ; 1CB4
-L1CB6:  lda     $79                             ; 1CB6
+L1CB6:  lda     last_joystick_1_value           ; 1CB6
         and     #$08                            ; 1CB8
         bne     L1CCD                           ; 1CBA
         lda     #$0C                            ; 1CBC
@@ -2881,7 +2882,7 @@ L1F0E:  lda     $46                             ; 1F0E
         bpl     L1F14                           ; 1F10
         inx                                     ; 1F12
         inx                                     ; 1F13
-L1F14:  lda     $79                             ; 1F14
+L1F14:  lda     last_joystick_1_value           ; 1F14
         and     L1F28,x                         ; 1F16
         bne     L1F21                           ; 1F19
         lda     L1F24,x                         ; 1F1B
@@ -2932,7 +2933,7 @@ L1F63:  rts                                     ; 1F63
 L1F64:  lda     L1EBB,y                         ; 1F64
         beq     L1F83                           ; 1F67
         bmi     L1F76                           ; 1F69
-        lda     $79                             ; 1F6B
+        lda     last_joystick_1_value           ; 1F6B
         and     #$10                            ; 1F6D
         beq     L1F75                           ; 1F6F
         lda     #$0B                            ; 1F71
@@ -2940,7 +2941,7 @@ L1F64:  lda     L1EBB,y                         ; 1F64
 L1F75:  rts                                     ; 1F75
 
 ; ----------------------------------------------------------------------------
-L1F76:  lda     $79                             ; 1F76
+L1F76:  lda     last_joystick_1_value           ; 1F76
         and     #$10                            ; 1F78
         eor     #$10                            ; 1F7A
         beq     L1F83                           ; 1F7C
@@ -2952,7 +2953,7 @@ L1F76:  lda     $79                             ; 1F76
 L1F83:  cpy     L1F9E                           ; 1F83
         beq     L1F75                           ; 1F86
         sty     L1F9E                           ; 1F88
-        lda     $79                             ; 1F8B
+        lda     last_joystick_1_value           ; 1F8B
         and     #$10                            ; 1F8D
         bne     L1F9B                           ; 1F8F
         ldy     #$00                            ; 1F91
@@ -2964,7 +2965,7 @@ L1F9B:  lda     #$00                            ; 1F9B
 
 ; ----------------------------------------------------------------------------
 L1F9E:  .byte   $FF                             ; 1F9E
-        lda     $79                             ; 1F9F
+        lda     last_joystick_1_value           ; 1F9F
         and     #$10                            ; 1FA1
         bne     L1FB3                           ; 1FA3
         lda     $4F                             ; 1FA5
@@ -3522,7 +3523,7 @@ L236F:  lda     #$14                            ; 236F
 ; ----------------------------------------------------------------------------
 L2392:  lda     $53                             ; 2392
         bne     L23D6                           ; 2394
-        lda     $79                             ; 2396
+        lda     last_joystick_1_value           ; 2396
         and     #$08                            ; 2398
         bne     L23D6                           ; 239A
         ldx     #$01                            ; 239C
@@ -3572,7 +3573,7 @@ L23E9:  lda     #$01                            ; 23E9
 ; ----------------------------------------------------------------------------
 L23EC:  lda     $53                             ; 23EC
         bne     L2430                           ; 23EE
-        lda     $79                             ; 23F0
+        lda     last_joystick_1_value           ; 23F0
         and     #$04                            ; 23F2
         bne     L2430                           ; 23F4
         ldx     #$01                            ; 23F6
@@ -3637,7 +3638,7 @@ L2446:  lda     $53                             ; 2446
         lda     $52                             ; 2462
         sbc     #$F8                            ; 2464
         bcc     L246D                           ; 2466
-        lda     $79                             ; 2468
+        lda     last_joystick_1_value           ; 2468
         and     #$10                            ; 246A
         rts                                     ; 246C
 
@@ -3663,7 +3664,7 @@ L2470:  lda     $53                             ; 2470
         lda     $52                             ; 248C
         sbc     #$07                            ; 248E
         bcs     L2497                           ; 2490
-        lda     $79                             ; 2492
+        lda     last_joystick_1_value           ; 2492
         and     #$10                            ; 2494
         rts                                     ; 2496
 
@@ -3961,7 +3962,7 @@ smc_jsr_01:
 L268D:  lda     #$00                            ; 268D
         sta     joystick_1_rw                   ; 268F
         lda     joystick_1                      ; 2692
-L2695:  sta     $79                             ; 2695
+L2695:  sta     last_joystick_1_value           ; 2695
         lda     #$00                            ; 2697
         sta     $6E                             ; 2699
         jsr     L26AD                           ; 269B

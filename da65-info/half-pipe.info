@@ -86,6 +86,7 @@ RANGE { START $0c03; NAME "function_pointer_table"; TYPE ADDRTABLE; END +42; };
 # Args: zp2f: table index (function_pointer_table)
 LABEL { ADDR $2669; NAME "call_function_at_index_zp2f"; };
 LABEL { ADDR $2F; NAME "game_state_function_table_index"; };
+LABEL { ADDR $79; NAME "last_joystick_1_value"; };
 
 LABEL { ADDR $2636; NAME "swap_buffers_zp40_zp56"; };
 RANGE { START $40; NAME "buffer_zp40"; TYPE BYTETABLE; END +22; };
