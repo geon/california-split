@@ -25,10 +25,10 @@ RANGE { START $c000; NAME "background_bitmap"; TYPE BYTETABLE; END +8000; UNIT 8
 # Not sure.
 RANGE { START $e000; NAME "background_color"; TYPE BYTETABLE; END +1000; UNIT 1000; };
 
-RANGE { START $0e2c; NAME "play_again"; TYPE TEXTTABLE; END +11; };
+RANGE { START $0e2c; NAME "play_again"; TYPE TEXTTABLE; END +12; };
 RANGE { START $0e39; NAME "play_again_yes"; TYPE TEXTTABLE; END +3; };
-RANGE { START $0e3c; NAME "play_again_no"; TYPE TEXTTABLE; END +2; };
-RANGE { START $27bd; NAME "error_messages"; TYPE TEXTTABLE; END $2864; };
+RANGE { START $0e3c; NAME "play_again_no"; TYPE TEXTTABLE; END +3; };
+RANGE { START $27bd; NAME "error_messages"; TYPE TEXTTABLE; END $2865; };
 RANGE { START $2907; NAME "error_messages_2"; TYPE TEXTTABLE; END $2951; };
 
 LABEL { ADDR $c398; NAME "player_name_bitmap"; SIZE 136; };
@@ -39,22 +39,58 @@ RANGE { START $ea00; NAME "font"; TYPE BYTETABLE; END $ebff; UNIT 8; };
 RANGE { START $32d0; NAME "packed_player_sprites"; TYPE BYTETABLE; END $8abf; };
 RANGE { START $8dd2; NAME "packed_player_sprites_2"; TYPE BYTETABLE; END $96b6; };
 
-RANGE { START $f7c3; NAME "doesnt_look_like_code_1"; TYPE BYTETABLE; END $f905; };
-RANGE { START $f946; NAME "doesnt_look_like_code_2"; TYPE BYTETABLE; END $ffff; };
-RANGE { START $ef42; NAME "doesnt_look_like_code_3"; TYPE BYTETABLE; END $f12e; };
-RANGE { START $e3e8; NAME "doesnt_look_like_code_4"; TYPE BYTETABLE; END $e7ff; };
-RANGE { START $2952; NAME "doesnt_look_like_code_5"; TYPE BYTETABLE; END $29ff; };
-RANGE { START $3000; NAME "doesnt_look_like_code_9"; TYPE BYTETABLE; END $32cf; };
-RANGE { START $9800; NAME "doesnt_look_like_code_6"; TYPE BYTETABLE; END $9cff; };
-RANGE { START $a080; NAME "doesnt_look_like_code_8"; TYPE BYTETABLE; END $a3f4; };
-RANGE { START $11f0; NAME "doesnt_look_like_code_7"; TYPE BYTETABLE; END $1324; };
-RANGE { START $8AC0; NAME "doesnt_look_like_code_10"; TYPE BYTETABLE; END $8dd0; };
-RANGE { START $df40; NAME "doesnt_look_like_code_11"; TYPE BYTETABLE; END $dfff; };
-RANGE { START $2865; NAME "doesnt_look_like_code_12"; TYPE BYTETABLE; END $2904; };
-RANGE { START $1dcd; NAME "doesnt_look_like_code_13"; TYPE BYTETABLE; END $1e44; };
+# Doesn't look like code.
+RANGE { START $f7c3; TYPE BYTETABLE; END $f905; };
+RANGE { START $f946; TYPE BYTETABLE; END $ffff; };
+RANGE { START $ef42; TYPE BYTETABLE; END $f12e; };
+RANGE { START $e3e8; TYPE BYTETABLE; END $e7ff; };
+RANGE { START $2952; TYPE BYTETABLE; END $29ff; };
+RANGE { START $3000; TYPE BYTETABLE; END $32cf; };
+RANGE { START $9800; TYPE BYTETABLE; END $9cff; };
+RANGE { START $a080; TYPE BYTETABLE; END $a3f4; };
+RANGE { START $11f0; TYPE BYTETABLE; END $1324; };
+RANGE { START $8AC0; TYPE BYTETABLE; END $8dd0; };
+RANGE { START $df40; TYPE BYTETABLE; END $dfff; };
+#RANGE { START $2865; TYPE BYTETABLE; END $2904; };
+RANGE { START $1dcd; TYPE BYTETABLE; END $1e44; };
 
 LABEL { ADDR $0031; NAME "current_player_index"; };
 LABEL { ADDR $108f; NAME "switch_player"; SIZE 60; };
 # Args: A: char, Y: x-pos
 LABEL { ADDR $1052; NAME "print_char"; };
 LABEL { ADDR $0e15; NAME "prompt_play_again"; };
+
+LABEL { ADDR $2d; NAME "cursor_position"; SIZE 2; };
+LABEL { ADDR $3d; NAME "cursor_color_maybe"; };
+LABEL { ADDR $1120; NAME "load_cursor"; };
+LABEL { ADDR $1130; NAME "store_cursor"; };
+
+RANGE { START $28e2; NAME "string_pointer_table"; TYPE ADDRTABLE; END $28ff; };
+# Args: zp6c: string table index (string_pointer_table)
+LABEL { ADDR $2774; NAME "print_string_at_index_zp6c"; };
+RANGE { START $2866; TYPE TEXTTABLE; END $28E1; };
+
+LABEL { ADDR $2762; NAME "print_string_at_pointer_zp72"; };
+
+LABEL { ADDR $16a7; NAME "decimal_4_char_decrement"; };
+LABEL { ADDR $2328; NAME "right_shift_16bit_zp54_by_x"; };
+LABEL { ADDR $1630; NAME "load_sprite"; };
+LABEL { ADDR $18dd; NAME "set_up_sprite_registers"; };
+LABEL { ADDR $15f7; NAME "read_joysick_maybe"; };
+LABEL { ADDR $0f4b; NAME "decrement_pointer_51_by_dec100"; };
+LABEL { ADDR $0f5d; NAME "increment_pointer_51_by_dec100"; };
+LABEL { ADDR $0e3f; NAME "print_yes_no"; };
+LABEL { ADDR $267a; NAME "smc_jsr_01"; SIZE 3; };
+
+RANGE { START $0c03; NAME "function_pointer_table"; TYPE ADDRTABLE; END +42; };
+# Args: zp2f: table index (function_pointer_table)
+LABEL { ADDR $2669; NAME "call_function_at_index_zp2f"; };
+LABEL { ADDR $2F; NAME "game_state_function_table_index"; };
+
+LABEL { ADDR $2636; NAME "swap_buffers_zp40_zp56"; };
+RANGE { START $40; NAME "buffer_zp40"; TYPE BYTETABLE; END +22; };
+RANGE { START $56; NAME "buffer_zp56"; TYPE BYTETABLE; END +22; };
+LABEL { ADDR $25a9; NAME "init_buffer_zp40"; };
+LABEL { ADDR $259d; NAME "init_buffers_zp40_zp56"; };
+
+RANGE { START $191d; NAME "unknown_table"; TYPE BYTETABLE; END $19fc; UNIT 8; };
