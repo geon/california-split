@@ -1,5 +1,5 @@
 ; da65 V2.19 - Git c720c3c48
-; Created:    2026-04-12 14:14:36
+; Created:    2026-04-12 15:52:50
 ; Input file: unpacked-prgs/half-pipe.prg
 ; Page:       1
 
@@ -685,7 +685,7 @@ L0E46:  lda     play_again_yes,y                ; 0E46
         dex                                     ; 0E4D
         bne     L0E46                           ; 0E4E
         lda     $79                             ; 0E50
-        jsr     read_joysick_maybe              ; 0E52
+        jsr     read_joysick                    ; 0E52
         tay                                     ; 0E55
         and     #$10                            ; 0E56
         bne     L0E6D                           ; 0E58
@@ -1728,15 +1728,15 @@ L15F0:  sta     $0F                             ; 15F0
 L15F6:  rts                                     ; 15F6
 
 ; ----------------------------------------------------------------------------
-read_joysick_maybe:
+read_joysick:
         pha                                     ; 15F7
         lda     #$FF                            ; 15F8
-        sta     LDC02                           ; 15FA
+        sta     joystick_1_rw                   ; 15FA
         lda     #$00                            ; 15FD
-        sta     LDC03                           ; 15FF
+        sta     joystick_2_rw                   ; 15FF
         lda     #$F7                            ; 1602
-        sta     LDC00                           ; 1604
-        lda     LDC01                           ; 1607
+        sta     joystick_1                      ; 1604
+        lda     joystick_2                      ; 1607
         and     #$02                            ; 160A
         cmp     #$02                            ; 160C
         beq     L1618                           ; 160E
@@ -1748,8 +1748,8 @@ read_joysick_maybe:
 
 ; ----------------------------------------------------------------------------
 L1618:  lda     #$EF                            ; 1618
-        sta     LDC00                           ; 161A
-        lda     LDC01                           ; 161D
+        sta     joystick_1                      ; 161A
+        lda     joystick_2                      ; 161D
         and     #$80                            ; 1620
         cmp     #$80                            ; 1622
         beq     L162E                           ; 1624
@@ -3959,8 +3959,8 @@ smc_jsr_01:
         lda     #$1F                            ; 2689
         bne     L2695                           ; 268B
 L268D:  lda     #$00                            ; 268D
-        sta     LDC02                           ; 268F
-        lda     LDC00                           ; 2692
+        sta     joystick_1_rw                   ; 268F
+        lda     joystick_1                      ; 2692
 L2695:  sta     $79                             ; 2695
         lda     #$00                            ; 2697
         sta     $6E                             ; 2699
@@ -10151,11 +10151,16 @@ color_ram:
         .byte   $00,$AA,$33,$CC,$33,$CC,$33,$CC ; DBE8
         .byte   $00,$AA,$33,$CC,$33,$CC,$33,$CC ; DBF0
         .byte   $00,$AA,$33,$CC,$33,$CC,$33,$CC ; DBF8
-LDC00:  .byte   $00                             ; DC00
-LDC01:  .byte   $AA                             ; DC01
-LDC02:  .byte   $33                             ; DC02
-LDC03:  .byte   $CC,$33,$CC,$33,$CC,$00,$AA,$33 ; DC03
-        .byte   $CC,$33                         ; DC0B
+joystick_1:
+        .byte   $00                             ; DC00
+joystick_2:
+        .byte   $AA                             ; DC01
+joystick_1_rw:
+        .byte   $33                             ; DC02
+joystick_2_rw:
+        .byte   $CC                             ; DC03
+timer_a:.byte   $33,$CC                         ; DC04
+timer_b:.byte   $33,$CC,$00,$AA,$33,$CC,$33     ; DC06
 LDC0D:  .byte   $CC,$33,$CC,$00,$AA,$33,$CC,$33 ; DC0D
         .byte   $CC,$33,$CC,$00,$AA,$33,$CC,$33 ; DC15
         .byte   $CC,$33,$CC,$00,$AA,$33,$CC,$33 ; DC1D

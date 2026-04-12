@@ -45,3 +45,10 @@ LABEL { ADDR $D02C; NAME "sprite_5_color"; };
 LABEL { ADDR $D02D; NAME "sprite_6_color"; };
 LABEL { ADDR $D02E; NAME "sprite_7_color"; };
 LABEL { ADDR $D800; NAME "color_ram"; SIZE 1000; };
+
+LABEL { ADDR $DC00; NAME "joystick_1"; };
+LABEL { ADDR $DC01; NAME "joystick_2"; };
+LABEL { ADDR $DC02; NAME "joystick_1_rw"; };
+LABEL { ADDR $DC03; NAME "joystick_2_rw"; };
+LABEL { ADDR $DC04; NAME "timer_a"; SIZE 2; };
+LABEL { ADDR $DC06; NAME "timer_b"; SIZE 2; };

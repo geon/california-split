@@ -76,7 +76,7 @@ LABEL { ADDR $16a7; NAME "decimal_4_char_decrement"; };
 LABEL { ADDR $2328; NAME "right_shift_16bit_zp54_by_x"; };
 LABEL { ADDR $1630; NAME "load_sprite"; };
 LABEL { ADDR $18dd; NAME "set_up_sprite_registers"; };
-LABEL { ADDR $15f7; NAME "read_joysick_maybe"; };
+LABEL { ADDR $15f7; NAME "read_joysick"; };
 LABEL { ADDR $0f4b; NAME "decrement_pointer_51_by_dec100"; };
 LABEL { ADDR $0f5d; NAME "increment_pointer_51_by_dec100"; };
 LABEL { ADDR $0e3f; NAME "print_yes_no"; };
